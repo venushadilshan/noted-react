@@ -5,8 +5,8 @@ import axios from "axios";
 const NoteCard = (props) => {
     const UriPrefix = "http://localhost:3001";
 
-    const deleteNote=()=>{
-        axios.delete(UriPrefix + `/note/${props.id}`)
+    const deleteNote= async ()=>{
+        await axios.delete(UriPrefix + `/note/${props.id}`)
         .then(function (response) {
             console.log(response);
         })
@@ -25,7 +25,7 @@ const NoteCard = (props) => {
     {
         inputClass="bg-gray-500"
     }
-    return (  <div className="bg-gray-800 w-full lg:w-1/4 mt-10 rounded p-5 m-3 self-start">
+    return (  <div className="bg-gray-800 w-full lg:w-1/4 mt-10 rounded p-5 m-3 self-start"  data-aos="fade-up">
     <input type="text" readOnly className={`text-slate-50 text-xl p-1 w-full rounded ${inputClass}`} value={props.title} />
     <textarea className={`text-slate-50 text-md p-1 mt-2 w-full rounded ${inputClass}`} value={props.desc}/>
     <div className="flex flex-row items-center justify-end w-full">
