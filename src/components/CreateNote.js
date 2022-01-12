@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import axios from "axios";
 const CreateNote = (props) => {
+    const UriPrefix = "http://localhost:3001";
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const insertNote = () => {
@@ -17,7 +18,7 @@ const CreateNote = (props) => {
         //params.append('date',)
         params.append('userId', props.user)
         console.log(params)
-        axios.post('http://localhost:3001/note/', params, config)
+        axios.post(UriPrefix + '/note', params, config)
             .then(function (response) {
                 console.log(response);
             })
