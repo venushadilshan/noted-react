@@ -7,15 +7,18 @@ const CreateNote = (props) => {
     const [body, setBody] = useState("");
     const insertNote = () => {
 
+        //check here
+        props.newNote()
+
         const config = {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             }
         }
-        const params = new URLSearchParams()
+       const params = new URLSearchParams()
         params.append('title', title)
         params.append('desc', body)
-        //params.append('date',)
+        params.append('date', new Date())
         params.append('userId', props.user)
         console.log(params)
         axios.post(UriPrefix + '/note', params, config)
@@ -25,6 +28,9 @@ const CreateNote = (props) => {
             .catch(function (error) {
                 console.log(error);
             });
+
+
+
     }
     return (
         <div className="bg-gray-800 w-full lg:w-1/4 mt-10 rounded p-5 m-3 self-center ">

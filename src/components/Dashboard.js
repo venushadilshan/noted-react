@@ -6,10 +6,15 @@ import NavBar from "./NavBar";
 import NoteCard from "./NoteCard";
 import CreateNote from "./CreateNote";
 import { useEffect } from "react";
+
+
+
 const Dashboard = () => {
   const UriPrefix = "http://localhost:3001";
   const params = new URLSearchParams()
   const { user, isAuthenticated } = useAuth0();
+  const [isNewNote, setIsNewNote] = useState(0)
+  
   const config = {
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -31,8 +36,12 @@ const Dashboard = () => {
       .then((res) => { setNotes(res.data) })
     console.log(notes);
 
-  }, [])
-
+  }, [isNewNote])
+//handler 
+const handleUpdate=()=>{
+  setIsNewNote(Math.random(1,100))
+  
+}
   return (
     
     isAuthenticated && (
@@ -40,12 +49,12 @@ const Dashboard = () => {
         <NavBar avatar={user.picture} fName={user.given_name} />
 
         <div className="flex flex-row p-10 flex-wrap items-start justify-evenly">
-          <CreateNote user={user.email} />
+          <CreateNote user={user.email} newNote={handleUpdate}/>
      
           {
           notes.map((note)=>{
-            console.log(note)
-            return <NoteCard title={note.title} desc={note.desc}/>
+         
+            return <NoteCard title={note.title} desc={note.desc} id={note._id} isDeleted={handleUpdate}/>
           })
           }
 
