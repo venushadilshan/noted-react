@@ -8,7 +8,7 @@ const CreateNote = (props) => {
     const insertNote = async () => {
 
         //check here
-        props.newNote()
+        props.newNote(Math.random(1,100))
 
         const config = {
             headers: {

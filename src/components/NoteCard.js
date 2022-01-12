@@ -14,7 +14,7 @@ const NoteCard = (props) => {
             console.log(error);
         });
 
-        props.isDeleted()
+        props.isDeleted(Math.random(1,100))
     }
     const updateNote=()=>{
         setIsEditing(false);

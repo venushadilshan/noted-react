@@ -38,8 +38,8 @@ const Dashboard = () => {
 
   }, [isNewNote])
 //handler 
-const handleUpdate=()=>{
-  setIsNewNote(Math.random(1,100))
+const handleUpdate=(x)=>{
+  setIsNewNote(x)
   
 }
   return (
