@@ -20,21 +20,16 @@ const Dashboard = () => {
       'Content-Type': 'application/x-www-form-urlencoded'
     }
   }
-  const [notes, setNotes] = useState([{
-    "_id": "61de7d3c8c7d578d11ca5aed",
-    "title": "Loading",
-    "desc": "Loading",
-    "userId": "Loading",
-    "__v": 0
-  }])
+  const [notes, setNotes] = useState([])
  
 
   params.append('userId', user.email)
 
-  useEffect(() => {
-    axios.post(UriPrefix + '/', params, config)
+  useEffect(async() => {
+    await axios.post(UriPrefix + '/', params, config)
       .then((res) => { setNotes(res.data) })
     console.log(notes);
+    //notes.shift()
 
   }, [isNewNote])
 //handler 
@@ -42,7 +37,9 @@ const handleUpdate=(x)=>{
   setIsNewNote(x)
   
 }
+console.log(notes)
   return (
+    
     
     isAuthenticated && (
       <div className="bg-gray-900 h-full min-h-screen lg:min-h-screen lg:h-full">
@@ -52,6 +49,7 @@ const handleUpdate=(x)=>{
           <CreateNote user={user.email} newNote={handleUpdate}/>
      
           {
+           
           notes.map((note)=>{
          
             return <NoteCard title={note.title} desc={note.desc} id={note._id} isDeleted={handleUpdate}/>
