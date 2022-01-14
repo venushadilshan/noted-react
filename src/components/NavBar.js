@@ -1,7 +1,7 @@
 
 import Logout from "./Logout";
 const NavBar = (props) => {
-    return (<div className="bg-gray-800 w-full">
+    return (<div className="bg-gray-800 w-full " style={{position:"sticky" ,top:"0", zIndex:"20"}}>
         <div className="flex flex-row justify-between items-center">
             <div className="flex flex-row items-center">
          

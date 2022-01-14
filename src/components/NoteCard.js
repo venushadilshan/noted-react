@@ -49,7 +49,7 @@ const NoteCard = (props) => {
 
 
     return (<div className="bg-gray-800 w-full lg:w-1/4 mt-10 rounded p-5 m-3 self-start" data-aos="fade-up">
-        <input type="text" readOnly className={`text-slate-50 text-xl p-1 w-full rounded ${inputClass}`} value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
+        <input type="text"  className={`text-slate-50 text-xl p-1 w-full rounded ${inputClass}`} value={title} onChange={(e)=>{setTitle(e.target.value)}}/>
         <textarea className={`text-slate-50 text-md p-1 mt-2 w-full rounded ${inputClass}`} value={body} onChange={(e)=>{setBody(e.target.value)}}/>
         <div className="flex flex-row items-center justify-end w-full">
             {isEditing && (

@@ -33,7 +33,7 @@ const CreateNote = (props) => {
 
     }
     return (
-        <div className="bg-gray-800 w-full lg:w-1/4 mt-10 rounded p-5 m-3 self-center ">
+        <div className="bg-gray-800 w-full lg:w-1/4 mt-10 rounded p-5 m-3 self-center " > 
             <h3 className="text-slate-50 font-semibold mb-3">New Note</h3>
             <input type="text" placeholder="Pick John at 10" onChange={(e) => { setTitle(e.target.value) }} value={title} className="text-slate-50 text-md bg-gray-600 p-1 rounded w-full" />
             <textarea className="text-slate-50 text-md bg-gray-600 p-1 rounded w-full mt-2" onChange={(e) => { setBody(e.target.value) }} value={body} placeholder="More details " />
