@@ -3,7 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 
 const NoteCard = (props) => {
-    const UriPrefix = "http://localhost:3001";
+    const UriPrefix = "https://noted-routes.herokuapp.com";
 
     const deleteNote= async ()=>{
         await axios.delete(UriPrefix + `/note/${props.id}`)

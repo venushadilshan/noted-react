@@ -10,7 +10,7 @@ import { useEffect } from "react";
 
 
 const Dashboard = () => {
-  const UriPrefix = "http://localhost:3001";
+  const UriPrefix = "https://noted-routes.herokuapp.com";
   const params = new URLSearchParams()
   const { user, isAuthenticated } = useAuth0();
   const [isNewNote, setIsNewNote] = useState(0)

@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import axios from "axios";
 const CreateNote = (props) => {
-    const UriPrefix = "http://localhost:3001";
+    const UriPrefix = "https://noted-routes.herokuapp.com";
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const insertNote = async () => {
