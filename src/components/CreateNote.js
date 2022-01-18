@@ -20,7 +20,7 @@ const CreateNote = (props) => {
         params.append('desc', body)
         params.append('date', new Date())
         params.append('userId', props.user)
-        console.log(params)
+       // console.log(params)
         await axios.post(UriPrefix + '/note', params, config)
             .then(function (response) {
                 console.log(response);

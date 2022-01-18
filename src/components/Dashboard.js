@@ -12,7 +12,7 @@ import Loading from "./Loading";
 
 const Dashboard = () => {
   const UriPrefix = process.env.REACT_APP_API_URI_PREFIX;
-  console.log(UriPrefix);
+  //console.log(UriPrefix);
   const params = new URLSearchParams()
   const { user, isAuthenticated } = useAuth0();
   const [isNewNote, setIsNewNote] = useState(0);
@@ -31,7 +31,7 @@ const Dashboard = () => {
   useEffect(async () => {
     await axios.post(UriPrefix + '/', params, config)
       .then((res) => { setNotes(res.data) })
-    console.log(notes);
+    //console.log(notes);
     //notes.shift()
     setIsLoading("none");
   }, [isNewNote])
@@ -41,7 +41,7 @@ const Dashboard = () => {
     setIsLoading("flex");
 
   }
-  console.log(notes)
+ // console.log(notes)
 
 
 
