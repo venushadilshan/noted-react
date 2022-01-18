@@ -12,6 +12,7 @@ import Loading from "./Loading";
 
 const Dashboard = () => {
   const UriPrefix = process.env.API_URI_PREFIX;
+  console.log(UriPrefix);
   const params = new URLSearchParams()
   const { user, isAuthenticated } = useAuth0();
   const [isNewNote, setIsNewNote] = useState(0);
