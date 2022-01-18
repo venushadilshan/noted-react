@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import axios from "axios";
 const CreateNote = (props) => {
-    const UriPrefix = process.env.API_URI_PREFIX;
+    const UriPrefix = process.env.REACT_APP_API_URI_PREFIX;
     const [title, setTitle] = useState("");
     const [body, setBody] = useState("");
     const insertNote = async () => {

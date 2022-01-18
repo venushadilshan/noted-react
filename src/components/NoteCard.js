@@ -4,7 +4,7 @@ import axios from "axios";
 
 const NoteCard = (props) => {
 
-    const UriPrefix = process.env.API_URI_PREFIX;
+    const UriPrefix = process.env.REACT_APP_API_URI_PREFIX;
 
 
     const [title, setTitle] = useState(props.title);
