@@ -4,7 +4,7 @@ import axios from "axios";
 
 const NoteCard = (props) => {
 
-    const UriPrefix = "https://noted-routes.herokuapp.com";
+    const UriPrefix = process.env.API_URI_PREFIX;
 
 
     const [title, setTitle] = useState(props.title);

@@ -11,7 +11,7 @@ import Loading from "./Loading";
 
 
 const Dashboard = () => {
-  const UriPrefix = "https://noted-routes.herokuapp.com";
+  const UriPrefix = process.env.API_URI_PREFIX;
   const params = new URLSearchParams()
   const { user, isAuthenticated } = useAuth0();
   const [isNewNote, setIsNewNote] = useState(0);
